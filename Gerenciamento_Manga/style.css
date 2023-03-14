@@ -1,0 +1,117 @@
+html{
+    background: rgb(44, 44, 44);
+}
+.title-hp{
+    display: flex;
+    justify-content: center;
+    background: dodgerblue;
+    color: white;
+    text-shadow: 1px 5px gray;
+    font-size: 40px;
+    font-family:cursive;
+}
+.menu-container{
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    background: deepskyblue;
+    font-size: larger;
+    padding: 3px;
+}
+.menu-container a{
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    color: white;
+    text-align: center; 
+    padding: 5px;
+    border-right: 1px solid rgba(255, 255, 255,0.3); 
+    border-left: 1px solid rgba(0, 0, 0, 0.1); 
+}
+.menu-container a:hover{
+    background: #1565C0;
+}
+.menu-container li:last-of-type a {
+    border-left: none;
+  }
+
+@media all and (max-width: 414px) {
+    .menu-container {
+      flex-flow: column wrap;
+      padding: 0;
+    }
+    .menu-container a { 
+      text-align: center; 
+      padding: 5px;
+      border-top: 1px solid rgba(255, 255, 255,0.3); 
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    }
+    .menu-container li:last-of-type a {
+      border-bottom: none;
+    }
+  }
+
+.slider {
+    display: flex;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    align-items: center;
+}
+
+ .slider:before {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    content: "";
+    width: 23.958%;
+    height: 190px;
+    background: linear-gradient(-90deg, hsla(0, 0%, 96.9%, 0), #f7f7f7)
+ }
+
+ .slider:after {
+    position: absolute;
+    right: 0;
+    content: "";
+    width: 23.958%;
+    height: 190px;
+    background: linear-gradient(90deg, 
+    hsla(0, 0%, 96.9%, 0), 
+    hsla(0, 0%, 96.9%, 0.99),99%
+    );
+ }
+
+ .slider .slide-track{
+    display: flex;
+    animation: scroll 35s linear infinite;
+    -webkit-animation: scroll 35s linear infinite;
+    width: calc(240px * 10);
+ }
+
+ .slider .slide{
+    display: flex;
+ }
+
+ .slider .slide img {
+    width: 180px;
+    height: 190px;
+    padding: 10px;
+    background-color: rgb(44, 44, 50);
+    cursor: pointer;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93,0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-240px * 5));
+        transform: translateX(calc(-240px * 5));
+    }
+}
